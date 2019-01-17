@@ -184,33 +184,11 @@
 %Personal Informations
 %
 
-\settopic{DVEW}
-\setgroupmember{Nils Dunker (192675), Lars-Henrik Röhricht (192904), David Blömeke (192696)}
-\setgroupnumber{07}
-
-%DVEW Exclusives
-\newcommand{\Model}[1]{Mod_\Sigma(#1)}
-\renewcommand{\implies}{\Rightarrow}
-\renewcommand{\iff}{\Leftrightarrow}
-\newcommand{\AND}{\text{\textbf{AND}}}
-\newcommand{\FILLS}[2]{[\text{\textbf{FILLS}}\; #1 \; #2]}
-\newcommand{\EXISTS}[2]{[\text{\textbf{EXISTS}}\; #1 \; #2]}
-\newcommand{\ALL}[2]{[\text{\textbf{ALL}}\; #1 \; #2]}
-\newcommand{\lseteq}{\sqsubseteq}
-\newcommand{\role}[1]{{:}R_{#1}}
-\newcommand{\Role}[1]{{:}{\text{#1}}}
-\newcommand{\deq}{\Dot{=}}
-\newcommand{\Cn}[1]{Cn(\Set{#1})}
-\newcommand{\mmodel}{|\mspace{-8.5mu}\sim}
-\newcommand{\Zz}{\textbf{Zz.} ~}
-\newcommand{\Perp}{\perp\,\!\,\!\,\!\,\!\,\!\,\!\,\!\!\!\!\perp}
+\settopic{Test}
+\setgroupmember{Max Mustermann}
+\setgroupnumber{00}
 
 
-\newcommand{\rlog}[3]{
-    \frac{#1 \;:\; #2}{#3}
-}
-\newcommand{\strcat}[1]{||#1||}
-\newcommand{\F}{\mathcal{F}}
 
 %
 %Ende
