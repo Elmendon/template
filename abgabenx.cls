@@ -136,7 +136,6 @@
 	]{info}
 
 %Umgebung für Lösungen 
-%Praktisch Nutzlos im Moment
 \newmdenv[linecolor=black,
 	frametitle=Lösung:,
 	linewidth=3pt,
