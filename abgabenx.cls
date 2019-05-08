@@ -81,7 +81,6 @@
 \newcommand{\setgroupnumber}[1]{\newcommand{\group}{}}
 \newcommand{\setexercisenumber}[1]{\newcommand{\exercisenumber}{#1}}
 
-
 %Abgabenspezifische Commands
 \newcommand{\added}[1]{\textcolor{red}{#1}}
 \newcommand{\AlgHinweise}{
@@ -91,8 +90,6 @@
 	\end{itemize}
 \end{mdframed}	
 }
-
-
 
 %
 %Environments
@@ -104,6 +101,7 @@
 	roundcorner=2pt}
 
 %Umgebung für Kommentare vom Tutor
+\newcommand{\commentSpaceX}[1]{\begin{commentSpace}\vspace{#1 cm}\end{commentSpace}}
 \newmdenv[linecolor=orange,
 	frametitle=Kommentare,
 	frametitlebackgroundcolor=orange!70,
@@ -139,16 +137,30 @@
 
 %Umgebung für Lösungen 
 %Praktisch Nutzlos im Moment
+\newmdenv[linecolor=black,
+	frametitle=Lösung:,
+	linewidth=3pt,
+	topline = false, 
+	rightline = false,
+	bottomline = false,
+	nobreak = false,
+	]{probSolBox}
+	
 \newenvironment{proposedSol}[1][]
 {
+	\begin{probSolBox}
+		\begin{enumerate}[#1]
 }
 {
-	\newpage
+		\end{enumerate}
+	\end{probSolBox}
+	%\newpage
 }
 
 %
 %Class Options
 %
+%Option für die Abgabe
 \DeclareOption{Abgabe}{
 	\RenewEnviron{question}[1]{}
 	\RenewEnviron{info}[1]{}
@@ -158,6 +170,7 @@
 	\renewcommand{\setgroupnumber}[1]{\newcommand{\group}{Gruppe #1}}
 }
 
+%Option für die Weitergabe
 \DeclareOption{Weitergabe}{
 	\RenewEnviron{question}[1]{}
 	\RenewEnviron{info}[1]{}
@@ -165,7 +178,6 @@
 	\presetkeys{todonotes}{disable}{}
 }
 
-%Die Optionen parsen
 \ExecuteOptions{}
 \ProcessOptions
 
@@ -182,21 +194,15 @@
 \newcommand{\Set}[1]{\{#1\}}
 \newcommand{\TextSet}[1]{$\{#1\}$}
 
-
 %
 %Personal Informations
 %
 
-\settopic{Übungsnamme}
-\setgroupmember{Max Mustermann (112233)}
-\setgroupnumber{Meine Gruppe}
-
-
+\settopic{Test Übung}
+\setgroupmember{Max Musterman (112233)}
+\setgroupnumber{Test Gruppe}
 
 %
 %Ende
 %
 \endinput
-
-
-
