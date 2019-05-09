@@ -1,4 +1,3 @@
- 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{abgabenx}[v. 1.2]
 \LoadClass[10pt,numbers = noendperiod]{scrartcl}
@@ -38,6 +37,7 @@
 \RequirePackage{adjustbox}
 \RequirePackage{tabularx}
 \RequirePackage{todonotes}
+\RequirePackage{etoolbox}
 \RequirePackage{tikz}
 \RequirePackage{environ}
 \RequirePackage[24hr]{datetime}
@@ -47,39 +47,33 @@
 %Customization
 %
 
-%Header Options
-\renewcommand{\headfont}{\normalfont}
-\clearpairofpagestyles
-\ihead{\textbf{\topic} \\ \footnotesize \groupmember}
-\chead{\raisebox{\baselineskip}{\textbf{\group}}}
-\ohead{\raisebox{\baselineskip}{\textbf{Übungsblatt \exercisenumber}}}
-
-%Footer Options
-\ifoot{\footnotesize  \thesection}
-\cfoot{\footnotesize Version vom \today{} um \currenttime{} Uhr}
-\ofoot{\footnotesize Seite \thepage{}  von \pageref{LastPage}}
-
-\pagestyle{scrheadings} 
-
 %Redifine Section counter
 \renewcommand\thesection{Aufgabe \exercisenumber.\arabic{section}}
 \renewcommand\thesubsection{\arabic{subsection})}
 \renewcommand\thesubsubsection{(\alph{subsubsection})}
-
-%Set todo to inline mode
-\presetkeys{todonotes}{inline}{}
-
-%\pgfplotsset{compat=newest}
-
-%
-%Commands
-%
 
 %Header Commands
 \newcommand{\settopic}[1]{\newcommand{\topic}{#1}}
 \newcommand{\setgroupmember}[1]{\newcommand{\groupmember}{}}
 \newcommand{\setgroupnumber}[1]{\newcommand{\group}{}}
 \newcommand{\setexercisenumber}[1]{\newcommand{\exercisenumber}{#1}}
+
+%Define new Taskcommand 
+\newcounter{taskCounter}
+\defcounter{taskCounter}{1}
+\newcommand{\Task}[2]{
+	\begin{flushleft} \textbf{Aufgabe \exercisenumber.\arabic{taskCounter}} \xspace [#1]
+	\hfill
+	#2
+	\end{flushleft}
+}
+
+%Set todo to inline mode
+\presetkeys{todonotes}{inline}{}
+
+%
+%Commands
+%
 
 %Abgabenspezifische Commands
 \newcommand{\added}[1]{\textcolor{red}{#1}}
@@ -121,6 +115,7 @@
 	frametitlebackgroundcolor=red!70,
 	style=enviStyle
 	]{solution}
+
 %Umgebung für Fragen
 \newmdenv[linecolor=green,
 	frametitle=Frage,
@@ -176,6 +171,35 @@
 	\RenewEnviron{solution}[1]{}
 	\presetkeys{todonotes}{disable}{}
 }
+
+%Header Styles
+\renewcommand{\headfont}{\normalfont}
+\clearpairofpagestyles
+\DeclareOption{DoubleHeader}{
+	%Header Options
+	\ihead{\textbf{\topic} \\ \footnotesize \groupmember}
+	\chead{\raisebox{\baselineskip}{\textbf{\group}}}
+	\ohead{\raisebox{\baselineskip}{\textbf{Übungsblatt \exercisenumber}}}
+	
+	%Footer Options
+	\ifoot{\footnotesize  \thesection}
+	\cfoot{\footnotesize Version vom \today{} um \currenttime{} Uhr}
+	\ofoot{\footnotesize Seite \thepage{}  von \pageref{LastPage}}
+}
+
+\DeclareOption{SingleHeader}{
+	%Header Options
+	\ihead{\groupmember}
+	\chead{\textbf{\topic - \group}}
+	\ohead{Übungsblatt \exercisenumber}
+	
+	%Footer Options
+	\ifoot{\footnotesize  \thesection}
+	\cfoot{\footnotesize Version vom \today{} um \currenttime{} Uhr}
+	\ofoot{\footnotesize Seite \thepage{}  von \pageref{LastPage}}
+}
+
+\pagestyle{scrheadings} 
 
 \ExecuteOptions{}
 \ProcessOptions
