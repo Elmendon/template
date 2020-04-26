@@ -20,7 +20,7 @@
 	\else
 		\RequirePackage[T1]{fontenc}
 		\RequirePackage[utf8]{inputenc}
-		\RequirePackage[ngerman,english]{babel}
+		\RequirePackage[english, ngerman]{babel}
 	\fi
 \fi
 
@@ -54,8 +54,8 @@
 
 %Header Commands
 \newcommand{\settopic}[1]{\newcommand{\topic}{#1}}
-\newcommand{\setgroupmember}[1]{\newcommand{\groupmember}{}}
-\newcommand{\setgroupnumber}[1]{\newcommand{\group}{}}
+\newcommand{\setgroupmember}[1]{\newcommand{\groupmember}{#1}}
+\newcommand{\setgroupnumber}[1]{\newcommand{\group}{#1}}
 \newcommand{\setexercisenumber}[1]{\newcommand{\exercisenumber}{#1}}
 
 %Define new Taskcommand 
