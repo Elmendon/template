@@ -1,0 +1,51 @@
+% !TeX spellcheck = de_DE
+%
+% Folien getestet mit: latexmk -lualatex --shell-escape -silent -latexoption="-synctex=1" %
+% Argumente werden direkt an die Beamer-Class weitergeben
+% aspectratio=43 | 169 | 1610 
+% Getestet wird mit 1610
+% Auf Linux eignet sich https://pdfpc.github.io/ zum präsentieren
+%
+
+\documentclass[aspectratio=1610]{../tuprolis}
+
+%----------------------------------------------------------
+%Beamer Einstellungen
+%----------------------------------------------------------
+
+
+\title{Präsentation}
+
+\subtitle{Ein Test für das TU-Themed Metropolis Theme}
+
+\institute{Dortmund Corp}
+
+\author{Max Mustermann}
+
+\date{\today}
+
+%----------------------------------------------------------
+%Folieninhalt
+%----------------------------------------------------------
+
+\begin{document}
+	
+%Deckblatt
+\frame[plain]{\titlepage} 
+
+\begin{frame}[plain]{Inhalt}
+	\tableofcontents
+\end{frame}
+
+
+\section{Aufgabenblatt 1}
+
+\subsection{Eine Textfolie}
+\input{frame/folie1}
+
+\subsection{Eine Bildfolie}
+\input{frame/folie2}
+
+
+
+\end{document}
