@@ -20,7 +20,7 @@
 	\else
 		\RequirePackage[T1]{fontenc}
 		\RequirePackage[utf8]{inputenc}
-		\RequirePackage[ngerman,english]{babel}
+		\RequirePackage[english, ngerman]{babel}
 	\fi
 \fi
 
