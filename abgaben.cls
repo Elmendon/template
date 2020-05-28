@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{abgaben}[v. 1.3]
+\ProvidesClass{../abgaben}[v. 1.3]
 \LoadClass[10pt,numbers = noendperiod]{scrartcl}
 
 %
@@ -9,9 +9,7 @@
 %Prüfen welcher compiler verwendet wird, sollte die verwendung von XeTeX/LuaTeX ermöglichen
 \RequirePackage{ifxetex,ifluatex}
 \ifluatex
-	\RequirePackage{polyglossia} 
-	\setmainlanguage{german}
-	\setotherlanguage{english}
+		\RequirePackage[english,ngerman]{babel}
 \else
 	\ifxetex
 		\RequirePackage{polyglossia}
@@ -20,7 +18,7 @@
 	\else
 		\RequirePackage[T1]{fontenc}
 		\RequirePackage[utf8]{inputenc}
-		\RequirePackage[ngerman,english]{babel}
+		\RequirePackage[english,ngerman]{babel}
 	\fi
 \fi
 
@@ -82,50 +80,6 @@
 \presetkeys{todonotes}{inline}{}
 
 %
-%Commands
-%
-
-%Abgabenspezifische Commands
-\newcommand{\added}[1]{\textcolor{red}{#1}}
-\newcommand{\AlgHinweise}{
-\begin{mdframed}[frametitlebackgroundcolor=lightgray!80, backgroundcolor=lightgray!30, roundcorner=2pt, frametitle=Hinweise zur Abgabe, frametitlerule=true]
-	\begin{itemize}
-		\item Bei mehrfachen Abgaben des gleichen Blattes, immer die letzte abgegebene Version werten!
-	\end{itemize}
-\end{mdframed}	
-}
-
-
-\newmdenv[linecolor=black!30,
-	frametitle=Punkte,
-	roundcorner=2pt,
-]{points}
-\newcommand{\Punkte}{
-	\begin{points}
-			\begin{center}
-				\begin{tabular}[ht]{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-					\hline
-					\multirow{2}{*}{Block} & \multicolumn{7}{c}{Block 1} & \multicolumn{6}{|c|}{Block 2} \\ \cline{2-14}
-					& \multicolumn{7}{c}{$100.5/100$} & \multicolumn{6}{|c|}{$67.5/90$} \\ 
-					\hline
-					\multirow{2}{*}{Blatt} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 \\ \cline{2-14}
-					
-					&  $13.5$ & $19.5$  & $25$ & $20.5$ & $23$ & $0$ & $0$ & $22.5$ &  $24.5$ & $20.5$ &  &  &  \\
-					\hline
-				\end{tabular}
-			\end{center}
-			\begin{center}
-				\begin{tabular}[ht]{|c|c|c|c|c|}
-					\hline
-					Aufgabe & 1 & 2 & 3 & $\sum$ \\ \hline
-					Punkte  &   &   &   &        \\ \hline
-				\end{tabular}
-			\end{center}
-	\end{points}
-}
-
-
-%
 %Environments
 %
 
@@ -148,13 +102,6 @@
 	frametitlebackgroundcolor=gray!50,
 	style=enviStyle
 	]{definition}
-
-%Umgebung für Lösungen
-%\newmdenv[linecolor=red,
-%	frametitle=Lösung,
-%	frametitlebackgroundcolor=red!70,
-%	style=enviStyle
-%	]{solution}
 
 %Umgebung für Fragen
 \newmdenv[linecolor=green,
@@ -263,10 +210,18 @@
 %
 %Personal Informations
 %
+\IfFileExists{../abgabebspecifics.sty}
+{
+	\usepackage{../abgabebspecifics}
+}
+{
+	\typeout{Specify your personal information for this assignment in the abgabebspecifics.sty file!}
+	\settopic{Example Fach}
+	\setgroupmember{Max Mustermann (111111)}
+	\setgroupnumber{Gruppe XX}
+}
 
-\settopic{Example Fach}
-\setgroupmember{Max Mustermann (111111)}
-\setgroupnumber{Gruppe XX}
+
 
 %
 %Ende
