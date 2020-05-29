@@ -32,16 +32,12 @@
 \RequirePackage[headsepline]{scrlayer-scrpage}
 \RequirePackage[framemethod=TikZ,nobreak=true]{mdframed}
 \RequirePackage[shortlabels]{enumitem}
-\RequirePackage{adjustbox}
-\RequirePackage{tabularx}
 \RequirePackage{todonotes}
 \RequirePackage{etoolbox}
-\RequirePackage{tikz}
 \RequirePackage{environ}
 \RequirePackage[24hr]{datetime}
 \RequirePackage{lastpage}
 \RequirePackage{ifthen}
-\RequirePackage{array}
 \RequirePackage[normalem]{ulem}
 
 %
