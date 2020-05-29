@@ -44,11 +44,6 @@
 %Customization
 %
 
-%Redifine Section counter
-\renewcommand\thesection{Aufgabe \exercisenumber.\arabic{section}}
-\renewcommand\thesubsection{\arabic{subsection})}
-\renewcommand\thesubsubsection{(\alph{subsubsection})}
-
 %Header Commands
 \newcommand{\settopic}[1]{\newcommand{\topic}{#1}}
 \newcommand{\setgroupmember}[1]{\newcommand{\groupmember}{}}
