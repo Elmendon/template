@@ -153,6 +153,7 @@
 	\presetkeys{todonotes}{disable}{}
 }
 
+
 %Header Styles
 \renewcommand{\headfont}{\normalfont}
 \clearpairofpagestyles
@@ -206,13 +207,11 @@
 	\usepackage{../abgabebspecifics}
 }
 {
-	\typeout{Specify your personal information for this assignment in the abgabebspecifics.sty file!}
+	\ClassWarning{abgaben}{Specify your personal information for this assignment in the abgabebspecifics.sty file!}
 	\settopic{Example Fach}
 	\setgroupmember{Max Mustermann (111111)}
 	\setgroupnumber{Gruppe XX}
 }
-
-
 
 %
 %Ende
