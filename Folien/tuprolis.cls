@@ -1,28 +1,28 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tuprolis}[2020/05/28]
-\LoadClassWithOptions{beamer}
+\ProvidesPackage{../tuprolis}[2020/05/28]
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
+\ProcessOptions\relax
+\RequirePackage[abspath,realmainfile,parent]{currfile}
+\LoadClass[xcolor=dvipsnames]{beamer}
 \usetheme[progressbar=none, block=fill, subsectionpage=none]{metropolis}
 \RequirePackage{xcolor}
 \RequirePackage{ifluatex}
 \RequirePackage{ifxetex}
-\RequirePackage{etoolbox}
-\RequirePackage{lmodern}
 
 %----------------------------------------------------------
 %Switch für verschiedene Interpreter
 %----------------------------------------------------------
 
-\ifluatex
-    \usepackage[english,ngerman]{babel}
-\else
-    \ifxetex
-        \usepackage{polyglossia}
-        \setmainlanguage{german}
-    \else
-        \usepackage[utf8]{inputenc}
-        \usepackage[T1]{fontenc}
-        \usepackage[ngerman]{babel}
-    \fi
+\ifluatex %
+    \RequirePackage[english,ngerman]{babel} %
+\else %
+    \ifxetex %
+        \RequirePackage[english,ngerman]{babel} %
+    \else %
+        \RequirePackage[english,ngerman]{babel} %
+        \RequirePackage[utf8]{inputenc} %
+        \RequirePackage[T1]{fontenc} %
+    \fi %
 \fi
 
 %----------------------------------------------------------
@@ -57,6 +57,10 @@
 \setbeamercolor{progress bar}{fg=tudark, bg=tulight}
 
 \setbeamercolor{footline}{fg=tugreen}
+
+%Alertblock
+\setbeamercolor*{block title alerted}{fg=white,bg=red!70}
+\setbeamercolor*{block body alerted}{fg=darkgray,bg=red!20}
 
 %----------------------------------------------------------
 %Template Optionen
