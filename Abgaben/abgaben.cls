@@ -152,7 +152,9 @@
 }
 
 
-%Header Styles
+%
+% Page Styles
+%
 \renewcommand{\headfont}{\normalfont}
 \clearpairofpagestyles
 \DeclareOption{DoubleHeader}{
