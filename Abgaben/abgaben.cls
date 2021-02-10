@@ -185,7 +185,7 @@
 \ProcessOptions
 
 %
-%Commonly needed mathematic symbols
+%Commonly needed symbols
 %
 
 \newcommand{\N}{\mathbb{N}}
@@ -196,6 +196,7 @@
 \newcommand{\gceil}[1]{\lceil #1 \rceil}
 \newcommand{\Set}[1]{\{#1\}}
 \newcommand{\TextSet}[1]{$\{#1\}$}
+\newcommand{\xmark}{\ding{55}}%
 
 %
 %Personal Informations
