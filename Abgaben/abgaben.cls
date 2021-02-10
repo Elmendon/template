@@ -60,15 +60,6 @@
 	}	
 }
 
-%\newcommand{\task}[3]{
-%	\par\noindent
-%	\normalfont\large
-%	\textbf{#1}
-%	\ifthenelse{\equal{#2}{}}{Empty.}{[#2]}
-%	\hfill 
-%	\textbf{Punkte \uline{\hspace{1em}}/#3} \par\noindent
-%}
-
 \newcommand{\Task}[2]{
 	\task{Aufgabe \exercisenumber.\arabic{taskCounter}\stepcounter{taskCounter}}{#1}{#2}
 }
