@@ -51,6 +51,8 @@
 %Define new Taskcommand 
 \newcounter{taskCounter}
 \defcounter{taskCounter}{1}
+
+
 %\newcommand{\task}[3]{
 %	\par\noindent
 %	\normalfont\large
