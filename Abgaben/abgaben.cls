@@ -53,7 +53,7 @@
 \defcounter{taskCounter}{1}
 
 \newcommand{\task}[3]{
-	\section*{#1%
+	\section*{#1 %
 		\hfil \ifthenelse{\equal{#2}{}}{Empty.}{[#2]}%
 		\hfill%
 		\textbf{Punkte \uline{\hspace{1em}}/#3}%
