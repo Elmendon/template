@@ -61,7 +61,7 @@
 }
 
 \newcommand{\Task}[2]{
-	\task{Aufgabe \exercisenumber.\arabic{\thesection}}{#1}{#2}
+	\task{Aufgabe \exercisenumber.\arabic{taskCounter}\stepcounter{taskCounter}}{#1}{#2}
 }
 
 
