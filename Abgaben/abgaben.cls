@@ -12,9 +12,7 @@
 		\RequirePackage[english,ngerman]{babel}
 \else
 	\ifxetex
-		\RequirePackage{polyglossia}
-		\setmainlanguage{german}
-		\setotherlanguage{english}
+		\RequirePackage[english,ngerman]{babel}
 	\else
 		\RequirePackage[T1]{fontenc}
 		\RequirePackage[utf8]{inputenc}
