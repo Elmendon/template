@@ -1,6 +1,5 @@
 # Installation
-Die abgaben.cls Datei und abgabebspecifics.sty in den root Ordner der Abgaben verschieben. In den subfoldern können die Abgaben erstellt werden. 
-
+Die abgaben.cls Datei und abgabebspecifics.sty in den root Ordner der Abgaben verschieben. In den Unterordnern können die Abgaben erstellt werden.
 ```
 \abgaben.cls
 \abgabebspecifics.sty
@@ -23,3 +22,6 @@ Jede Abgabe sollte minimal folgende Information enthalten
 
 \end{document}
 ```
+
+## Folien
+Die Folien basieren auf dem Metropolis-Theme
